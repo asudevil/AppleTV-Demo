@@ -14,40 +14,30 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieDescription: UILabel!
     
-    
-    
-    @IBOutlet weak var headLine: UILabel!
+    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var ratings: UILabel!
     
     var loadedTitle = ""
     var loadedImage = UIImage()
     var loadedDescription = ""
+    var loadedReleaseDate = ""
+    var loadedRatings = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         movieTitle.text = loadedTitle
         movieImage.image = loadedImage
         movieDescription.text = loadedDescription
+        releaseDate.text = loadedReleaseDate
+        ratings.text = loadedRatings
         
     }
     
-
     
-    func configureMovieDetails(movieDetail: MovieCell) {
-//        
-//        
-//        if let title = movieDetail.movieLbl.text {
-//    //       movieTitle.text = title
-//            
-//           print(title)
-//        }
-//        
-//        if let path = movieDetail.movieImg.image {
-//            
-//   //         movieImage.image = path
-//            
-//            
-//        }
-
+    @IBAction func playButton(sender: AnyObject) {
+        
+        
+        
     }
     
 /*
@@ -57,15 +47,6 @@ class MovieDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
 */
 
 }

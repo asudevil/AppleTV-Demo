@@ -14,6 +14,8 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var movieLbl: UILabel!
     
     var movieOverview = String()
+    var movieReleaseDate = String ()
+    var movieRatings = String ()
     
     func configureCell(movie: Movie) {
         
@@ -23,6 +25,14 @@ class MovieCell: UICollectionViewCell {
         
         if let description = movie.overview {
             movieOverview = description
+        }
+        
+        if let releaseDate = movie.releaseDate {
+            movieReleaseDate = releaseDate
+        }
+        
+        if let ratings = movie.ratings {
+            movieRatings = ratings
         }
         
         if let path = movie.posterPath {

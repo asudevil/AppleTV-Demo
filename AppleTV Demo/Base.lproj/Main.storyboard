@@ -129,7 +129,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAM-Xb-bvs">
-                                <rect key="frame" x="551" y="206" width="152" height="86"/>
+                                <rect key="frame" x="546" y="232" width="152" height="86"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="IJS-WZ-9F2"/>
@@ -137,19 +137,41 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButton:" destination="6AP-DM-sKL" eventType="primaryActionTriggered" id="RWU-xl-xir"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCD-WH-vX0">
+                                <rect key="frame" x="501" y="189" width="154" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ratings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY2-Y3-xpW">
+                                <rect key="frame" x="833" y="189" width="127" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <constraints>
-                            <constraint firstItem="vAM-Xb-bvs" firstAttribute="top" secondItem="VhI-4E-Jjh" secondAttribute="bottom" constant="100" id="7fN-Yr-8ue"/>
                             <constraint firstItem="VhI-4E-Jjh" firstAttribute="top" secondItem="qme-iU-WtI" secondAttribute="bottom" constant="10" id="8a5-52-HBX"/>
                             <constraint firstItem="vAM-Xb-bvs" firstAttribute="leading" secondItem="WQT-pg-puW" secondAttribute="trailing" constant="200" id="9Q1-cd-WaZ"/>
+                            <constraint firstItem="vAM-Xb-bvs" firstAttribute="top" secondItem="GCD-WH-vX0" secondAttribute="bottom" constant="50" id="9Xr-ZU-Tut"/>
                             <constraint firstItem="qme-iU-WtI" firstAttribute="top" secondItem="v21-JS-vTX" secondAttribute="bottom" constant="10" id="ECM-Ak-U5s"/>
+                            <constraint firstItem="ZY2-Y3-xpW" firstAttribute="top" secondItem="VhI-4E-Jjh" secondAttribute="bottom" constant="33" id="Icp-c2-sLX"/>
+                            <constraint firstItem="GCD-WH-vX0" firstAttribute="leading" secondItem="WQT-pg-puW" secondAttribute="trailing" constant="200" id="No4-ET-E7P"/>
                             <constraint firstItem="WQT-pg-puW" firstAttribute="leading" secondItem="lrJ-ak-uRh" secondAttribute="leadingMargin" constant="100" id="O8z-aA-z0m"/>
                             <constraint firstItem="WQT-pg-puW" firstAttribute="top" secondItem="qme-iU-WtI" secondAttribute="bottom" constant="10" id="RwO-NG-mNr"/>
                             <constraint firstItem="dP5-EF-Vrb" firstAttribute="top" secondItem="WQT-pg-puW" secondAttribute="bottom" constant="100" id="W0w-4F-dzx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VhI-4E-Jjh" secondAttribute="trailing" constant="100" id="dWj-XQ-NBA"/>
+                            <constraint firstItem="ZY2-Y3-xpW" firstAttribute="leading" secondItem="GCD-WH-vX0" secondAttribute="trailing" constant="100" id="hdd-kC-Qbh"/>
+                            <constraint firstItem="GCD-WH-vX0" firstAttribute="top" secondItem="VhI-4E-Jjh" secondAttribute="bottom" constant="33" id="iM1-31-uJd"/>
                             <constraint firstItem="qme-iU-WtI" firstAttribute="centerX" secondItem="lrJ-ak-uRh" secondAttribute="centerX" id="jjc-V2-and"/>
+                            <constraint firstItem="vAM-Xb-bvs" firstAttribute="top" secondItem="ZY2-Y3-xpW" secondAttribute="bottom" constant="50" id="o9I-MS-uFQ"/>
                             <constraint firstItem="VhI-4E-Jjh" firstAttribute="leading" secondItem="WQT-pg-puW" secondAttribute="trailing" constant="100" id="vNE-JC-5uF"/>
                         </constraints>
                     </view>
@@ -159,6 +181,8 @@
                         <outlet property="movieDescription" destination="VhI-4E-Jjh" id="F9a-qj-9Yq"/>
                         <outlet property="movieImage" destination="WQT-pg-puW" id="m4l-Zw-ZNh"/>
                         <outlet property="movieTitle" destination="qme-iU-WtI" id="jC6-mR-Vih"/>
+                        <outlet property="ratings" destination="ZY2-Y3-xpW" id="lNb-mE-9dt"/>
+                        <outlet property="releaseDate" destination="GCD-WH-vX0" id="4qq-Mk-8Ct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w0R-bd-HFc" userLabel="First Responder" sceneMemberID="firstResponder"/>

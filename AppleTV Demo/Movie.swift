@@ -15,6 +15,8 @@ class Movie {
     var title: String!
     var overview: String!
     var posterPath: String!
+    var releaseDate: String!
+    var ratings: String!
     
     init(movieDict: Dictionary<String, AnyObject>) {
         
@@ -29,6 +31,15 @@ class Movie {
         if let path = movieDict["poster_path"] as? String {
             
             self.posterPath = "\(URL_BASE)\(path)"
+        }
+        
+        if let releaseDate = movieDict["release_date"] as? String {
+            
+            self.releaseDate = releaseDate
+        }
+        
+        if let ratings = movieDict["vote_average"] as? String {
+            self.ratings = ratings
         }
         
     }

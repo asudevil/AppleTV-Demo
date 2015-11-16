@@ -102,14 +102,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             //Load the next view controller and pass in the moview
             
             clickedCell = cell
-            
-            let movieDetails = MovieDetailsViewController()
-            let sendSegue = movieDetails.configureMovieDetails(cell)
    
-            print("You tapped on movie number ")
-        
-    //        print(cell)
-            
+            print("You tapped on movie")
             
             performSegueWithIdentifier("movieDetails", sender: self)
             
@@ -153,25 +147,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-           let movieDetial = segue.destinationViewController as! MovieDetailsViewController
+    let movieDetail = segue.destinationViewController as! MovieDetailsViewController
+        
+        if let title = clickedCell.movieLbl.text {
+            movieDetail.loadedTitle = title
             
-            if let title = clickedCell.movieLbl.text {
-                movieDetial.loadedTitle = title
+            print(title)
+        }
+        
+        if let showImage = clickedCell.movieImg.image {
                 
-                print(title)
+            movieDetail.loadedImage = showImage
                 
-            if let showImage = clickedCell.movieImg.image {
-                    
-                movieDetial.loadedImage = showImage
-                    
-            }
-                
-            let showDescription = clickedCell.movieOverview
-                
-                movieDetial.loadedDescription = showDescription
-                    
-            }
-
+        }
+            
+        movieDetail.loadedDescription = clickedCell.movieOverview
+            
+        
+        let displayRelease = "Release date: \(clickedCell.movieReleaseDate) "
+        movieDetail.loadedReleaseDate = displayRelease
+        
+        
+        let displayRatings = "Movie Ratings: \(clickedCell.movieRatings)"
+        movieDetail.loadedRatings = displayRatings
 
     }
     
