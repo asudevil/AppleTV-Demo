@@ -15,6 +15,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     
     
+    var clickedCell = MovieCell()
+
+    
+    
     var defaultSize = CGSizeMake(232, 400)
     let focusSize = CGSizeMake(305, 540)
     var movies = [Movie]()
@@ -80,9 +84,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 tap.allowedPressTypes = [NSNumber(integer: UIPressType.Select.rawValue)]
                 cell.addGestureRecognizer(tap)
             }
-            print("INDEXPATH>>>>>>>>")
-            print(indexPath.row)
-            print(movie)
+   //         print("INDEXPATH>>>>>>>>")
+   //         print(indexPath.row)
+  //          print(movie)
             
             return cell
             
@@ -97,13 +101,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if let cell = gesture.view as? MovieCell {
             //Load the next view controller and pass in the moview
             
+            clickedCell = cell
             
             let movieDetails = MovieDetailsViewController()
-//            let sendSegue = movieDetails.configureMovieDetails(cell)
+            let sendSegue = movieDetails.configureMovieDetails(cell)
    
             print("You tapped on movie number ")
         
-            print(cell)
+    //        print(cell)
             
             
             performSegueWithIdentifier("movieDetails", sender: self)
@@ -146,13 +151,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
            let movieDetial = segue.destinationViewController as! MovieDetailsViewController
             
-            movieDetial.movieData = "Edo"
+            if let title = clickedCell.movieLbl.text {
+                movieDetial.loadedTitle = title
+                
+                print(title)
+                
+            if let showImage = clickedCell.movieImg.image {
+                    
+                movieDetial.loadedImage = showImage
+                    
+            }
+                
+            let showDescription = clickedCell.movieOverview
+                
+                movieDetial.loadedDescription = showDescription
+                    
+            }
 
-       }
+
+    }
     
     
 }

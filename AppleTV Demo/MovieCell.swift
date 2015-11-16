@@ -13,10 +13,16 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var movieImg: UIImageView!
     @IBOutlet weak var movieLbl: UILabel!
     
+    var movieOverview = String()
+    
     func configureCell(movie: Movie) {
         
         if let title = movie.title {
             movieLbl.text = title
+        }
+        
+        if let description = movie.overview {
+            movieOverview = description
         }
         
         if let path = movie.posterPath {
