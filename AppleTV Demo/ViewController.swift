@@ -14,11 +14,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     var clickedCell = MovieCell()
 
-    
-    
     var defaultSize = CGSizeMake(232, 400)
     let focusSize = CGSizeMake(305, 540)
     var movies = [Movie]()
@@ -56,7 +53,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         dispatch_async(dispatch_get_main_queue()) {
                             self.collectionView.reloadData()
                         }
-                        
                     }
                     
                 } catch {
@@ -71,7 +67,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
 
-    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MovieCell", forIndexPath: indexPath) as? MovieCell {
@@ -84,9 +79,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 tap.allowedPressTypes = [NSNumber(integer: UIPressType.Select.rawValue)]
                 cell.addGestureRecognizer(tap)
             }
-   //         print("INDEXPATH>>>>>>>>")
-   //         print(indexPath.row)
-  //          print(movie)
             
             return cell
             
@@ -110,12 +102,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        print("INDEX CLICKED >>>>>>>>>")
-        print(indexPath.row)
-        
-    }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -156,23 +142,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         if let showImage = clickedCell.movieImg.image {
-                
             movieDetail.loadedImage = showImage
-                
         }
             
         movieDetail.loadedDescription = clickedCell.movieOverview
-            
         
         let displayRelease = "Release date: \(clickedCell.movieReleaseDate) "
         movieDetail.loadedReleaseDate = displayRelease
-        
         
         let displayRatings = "Movie Ratings: \(clickedCell.movieRatings)"
         movieDetail.loadedRatings = displayRatings
 
     }
-    
     
 }
 

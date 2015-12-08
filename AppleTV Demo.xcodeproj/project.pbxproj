@@ -14,6 +14,7 @@
 		840C62471BAFA79E004038F5 /* AppleTV_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C62461BAFA79E004038F5 /* AppleTV_DemoTests.swift */; };
 		840C62521BB112B4004038F5 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C62511BB112B4004038F5 /* MovieCell.swift */; };
 		840C62541BB11E15004038F5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C62531BB11E15004038F5 /* Movie.swift */; };
+		8423CB8C1BF991E000AB5E1E /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423CB8B1BF991E000AB5E1E /* VideoPlayer.swift */; };
 		84C778A21BCB624200923C33 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C778A11BCB624200923C33 /* MovieDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		840C62481BAFA79E004038F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		840C62511BB112B4004038F5 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		840C62531BB11E15004038F5 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		8423CB8B1BF991E000AB5E1E /* VideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		84C778A11BCB624200923C33 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 			children = (
 				840C62341BAFA79E004038F5 /* AppDelegate.swift */,
 				840C62361BAFA79E004038F5 /* ViewController.swift */,
+				8423CB8B1BF991E000AB5E1E /* VideoPlayer.swift */,
 				840C62381BAFA79E004038F5 /* Main.storyboard */,
 				84C778A11BCB624200923C33 /* MovieDetailsViewController.swift */,
 				840C623D1BAFA79E004038F5 /* Info.plist */,
@@ -203,6 +206,7 @@
 			files = (
 				84C778A21BCB624200923C33 /* MovieDetailsViewController.swift in Sources */,
 				840C62371BAFA79E004038F5 /* ViewController.swift in Sources */,
+				8423CB8C1BF991E000AB5E1E /* VideoPlayer.swift in Sources */,
 				840C62351BAFA79E004038F5 /* AppDelegate.swift in Sources */,
 				840C62541BB11E15004038F5 /* Movie.swift in Sources */,
 				840C62521BB112B4004038F5 /* MovieCell.swift in Sources */,

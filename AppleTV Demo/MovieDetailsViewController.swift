@@ -34,14 +34,18 @@ class MovieDetailsViewController: UIViewController {
     }
     
     
+    //USE movie id in the string below instead of 206647
+    
+     var videoUrl = "http://api.themoviedb.org/3/movie/206647/videos?api_key=ff743742b3b6c89feb59dfc138b4c12f"
+    
+    
+    
     @IBAction func playButton(sender: AnyObject) {
         
-        
+        performSegueWithIdentifier("playVideo", sender: self)
         
     }
-    
 /*
-    
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
